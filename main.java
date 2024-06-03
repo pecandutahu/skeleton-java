@@ -36,6 +36,23 @@ class HelloWorld {
             System.out.print(angka.getAngka() + ", ");
         }
         
+        System.out.println("--------------------");
+        System.out.println("Cetak kelipatan ");
+        
+        // pengulangan 1 - 100
+        for(int i = 1; i <= 100; i++) {
+            // cari kelipatan 3 dan 5 terlebih dahulu
+            if(i % 3 == 0 && i % 5 == 0) {
+                System.out.print("XY, ");
+            }else if(i % 3 == 0) {
+                System.out.print("X, ");
+            }else if(i % 5 == 0) {
+                System.out.print("Y, ");
+            }else{
+                System.out.print(i + ", ");
+            }
+        }
+        
     }
     
     // 6. Class
