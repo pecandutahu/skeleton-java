@@ -7,7 +7,7 @@ public class Main {
 
         // Menerima input array pertama
         System.out.print("Masukkan elemen array pertama (dipisahkan dengan spasi): ");
-        String[] inputA = scanner.nextLine().split(" ");
+        String[] inputA = scanner.nextLine().split(" "); 
         int[] arrayA = new int[inputA.length];
         for (int i = 0; i < inputA.length; i++) {
             arrayA[i] = Integer.parseInt(inputA[i]);
@@ -38,18 +38,32 @@ public class Main {
             freqB.put(num, freqB.getOrDefault(num, 0) + 1);
             allElements.add(num);
         }
+        
+        // System.out.println("Freq A:");
+        // for (Map.Entry<Integer, Integer> num: freqA.entrySet()) {
+        //     System.out.println(num.getKey() + " = " + num.getValue());
+        // }
+        
+        // System.out.println("Freq B:");
+        // for (Map.Entry<Integer, Integer> num: freqB.entrySet()) {
+        //     System.out.println(num.getKey() + " = " + num.getValue());
+        // }
 
         // Mencari elemen yang sama
+        System.out.println("Sebug mencari yang sama:");
+        
         for (int num : freqA.keySet()) {
+            System.out.println(num + " - " +freqB.containsKey(num));
             if (freqB.containsKey(num)) {
                 sameElements.add(num);
             }
+            
         }
 
         // Menampilkan elemen yang sama
-        System.out.println("Elemen yang sama:");
+        System.out.println("Hasil Elemen yang sama:");
         for (int num : sameElements) {
-            System.out.println(num + " = " + Math.min(freqA.get(num), freqB.get(num)));
+            System.out.println(num + " = " + Math.max(freqA.get(num), freqB.get(num)));
         }
 
         // Menampilkan elemen yang tidak sama
