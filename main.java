@@ -1,5 +1,6 @@
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -38,6 +39,7 @@ class HelloWorld {
             System.out.print(angka.getAngka() + ", ");
         }
         
+        System.out.println("");
         System.out.println("--------------------");
         System.out.println("Cetak kelipatan ");
         
@@ -55,12 +57,30 @@ class HelloWorld {
             }
         }
         
+        System.out.println("");
         System.out.println("--------------------");
         System.out.println("Cari Element Array terbanyak");
         
         int[] a = {1, 2, 3, 4, 4, 4, 4, 1, 1};
         int mostFrequent = findMostFrequent(a);
         System.out.println("Elemen yang paling banyak ditampilkan: " + mostFrequent);
+        
+        
+        // regex
+        
+        System.out.println("--------------------");
+        System.out.println("Cetak Kalimat dengan Iterasi dinamis ");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan jumlah Pengulangan: ");
+        int jumlahPengulangan = scanner.nextInt();
+        scanner.nextLine();
+        
+        System.out.print("Masukkan kalimat: ");
+        String kalimat = scanner.nextLine();
+        
+        for(int i = 1; i <= jumlahPengulangan; i++) {
+            System.out.printf("%s%02d\n", kalimat, i);
+        }
         
         
     }
