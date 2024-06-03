@@ -63,7 +63,7 @@ public class Main {
         // Menampilkan elemen yang sama
         System.out.println("Hasil Elemen yang sama:");
         for (int num : sameElements) {
-            System.out.println(num + " = " + Math.max(freqA.get(num) * freqB.get(num)));
+            System.out.println(num + " = " + Math.max(freqA.get(num),freqB.get(num)));
         }
 
         // Menampilkan elemen yang tidak sama
