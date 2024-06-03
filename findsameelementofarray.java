@@ -53,7 +53,7 @@ public class Main {
         System.out.println("Sebug mencari yang sama:");
         
         for (int num : freqA.keySet()) {
-            System.out.println(num + " - " +freqB.containsKey(num));
+            // System.out.println(num + " - " +freqB.containsKey(num));
             if (freqB.containsKey(num)) {
                 sameElements.add(num);
             }
@@ -63,7 +63,7 @@ public class Main {
         // Menampilkan elemen yang sama
         System.out.println("Hasil Elemen yang sama:");
         for (int num : sameElements) {
-            System.out.println(num + " = " + Math.max(freqA.get(num), freqB.get(num)));
+            System.out.println(num + " = " + Math.max(freqA.get(num) * freqB.get(num)));
         }
 
         // Menampilkan elemen yang tidak sama
