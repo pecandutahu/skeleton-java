@@ -32,7 +32,7 @@ class HelloWorld {
         
         System.out.println("Contoh Bilangan prima");
         
-        BilanganController bilanganController = new BilanganController();
+        // BilanganController bilanganController = new BilanganController();
         
         List<Bilangan> bilanganPrima = bilanganController.getBilanganPrima();
         for(Bilangan angka : bilanganPrima) {
@@ -81,6 +81,31 @@ class HelloWorld {
         for(int i = 1; i <= jumlahPengulangan; i++) {
             System.out.printf("%s%02d\n", kalimat, i);
         }
+
+        scanner.close();
+        
+        // Reverse String
+        
+        System.out.println("--------------------");
+        System.out.println("Reverse String ");
+        
+        
+        Scanner scanner = new Scanner(System.in);
+        // Reverse String
+        System.out.print("Masukkan kalimat: ");
+        String kalimat = scanner.nextLine();
+        char c; //Untuk menampung charackter
+        String result = "", nstr = "";
+        
+        // Mencetak kalimat diikuti oleh nomor urut
+        for (int i = 0; i < kalimat.length(); i++) {
+            c = kalimat.charAt(i);
+            result = c + result;
+            // Format nomor urut menjadi dua digit
+        }
+        System.out.println(result);
+
+        scanner.close();
         
         
     }
