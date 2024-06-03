@@ -2,6 +2,8 @@
 // Use this editor to write, compile and run your Java code online
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 class HelloWorld {
     public static void main(String[] args) {
@@ -52,6 +54,14 @@ class HelloWorld {
                 System.out.print(i + ", ");
             }
         }
+        
+        System.out.println("--------------------");
+        System.out.println("Cari Element Array terbanyak");
+        
+        int[] a = {1, 2, 3, 4, 4, 4, 4, 1, 1};
+        int mostFrequent = findMostFrequent(a);
+        System.out.println("Elemen yang paling banyak ditampilkan: " + mostFrequent);
+        
         
     }
     
@@ -165,6 +175,26 @@ class HelloWorld {
         public void setAngka(int angka){
             this.angka = angka;
         }
+    }
+    
+    public static int findMostFrequent(int[] array) {
+        // Gunakan HashMap untuk menyimpan frkuensi di setiap element
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        for(int num : array) {
+            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0)+1);
+        }
+        
+        // tentukan element dengan frequency tertinggi
+        int mostFrequentElement = array[0];
+        int maxFrequency = 0;
+        
+        for(Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+            if(entry.getValue() > maxFrequency) {
+                mostFrequentElement = entry.getKey();
+                maxFrequency = entry.getValue();
+            }
+        }
+        return mostFrequentElement;
     }
 
 }
